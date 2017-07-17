@@ -32,7 +32,7 @@ class LoggerConsole {
         let message = '';
         for (let i = 0; i < textArr.length; i++) {
           if (textArr[i] && textArr[i].length) {
-            message += '\x1B[' + styles[style][0] + 'm' + textArr[i] + '\x1B[' + styles[style][1] + 'm \r\n';
+            message += textArr[i] + '\r\n';
           }
         }
         return message;
