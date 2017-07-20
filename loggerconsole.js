@@ -15,32 +15,7 @@ class LoggerConsole {
     this.logger   = logger;
     this.settings = settings;
 
-    if (Meteor.isServer) {
-      this.cons = {
-        error(obj, message) {
-          if (obj.level === 'FATAL') {
-            process.stdout.write(message + '\r\n');
-          } else {
-            process.stdout.write(message + '\r\n');
-          }
-        },
-        info(obj, message) {
-          process.stdout.write(message + '\r\n');
-        },
-        warn(obj, message) {
-          process.stdout.write(message + '\r\n');
-        },
-        debug(obj, message) {
-          process.stdout.write(message + '\r\n');
-        },
-        trace(obj, message) {
-          process.stdout.write(message + '\r\n');
-        },
-        log(obj, message) {
-          process.stdout.write(message + '\r\n');
-        }
-      };
-    } else {
+    if (Meteor.isClient) {
       this.cons = {
         error(obj, message) {
           let style = '';
@@ -133,28 +108,32 @@ class LoggerConsole {
           _message = '%c[' + obj.level + ': ' + obj.message + ']';
         }
       }
-
-      switch (level) {
-      case 'FATAL':
-        this.cons.error(obj, _message);
-        break;
-      case 'ERROR':
-        this.cons.error(obj, _message);
-        break;
-      case 'INFO':
-        this.cons.info(obj, _message);
-        break;
-      case 'WARN':
-        this.cons.warn(obj, _message);
-        break;
-      case 'DEBUG':
-        this.cons.debug(obj, _message);
-        break;
-      case 'TRACE':
-        this.cons.trace(obj, _message);
-        break;
-      default:
-        this.cons.log(obj, _message);
+      if (Meteor.isClient) {
+        switch (level) {
+          case 'FATAL':
+          this.cons.error(obj, _message);
+          break;
+          case 'ERROR':
+          this.cons.error(obj, _message);
+          break;
+          case 'INFO':
+          this.cons.info(obj, _message);
+          break;
+          case 'WARN':
+          this.cons.warn(obj, _message);
+          break;
+          case 'DEBUG':
+          this.cons.debug(obj, _message);
+          break;
+          case 'TRACE':
+          this.cons.trace(obj, _message);
+          break;
+          default:
+          this.cons.log(obj, _message);
+        }
+      }
+      else {
+        process.stdout.write(_message + '\r\n\n');
       }
     }, false, false);
   }
