@@ -5,7 +5,7 @@ import { check, Match } from 'meteor/check';
 
 /*
  * @class LoggerConsole
- * @summary Colorful console adapter for ostrio:logger (Logger)
+ * @summary Colorful console adapter for ostrio:logger (Logger) - only for client console
  */
 class LoggerConsole {
   constructor(logger, settings = {}) {
@@ -16,50 +16,28 @@ class LoggerConsole {
     this.settings = settings;
 
     if (Meteor.isServer) {
-      /* @url https://github.com/euforic/coloring/blob/master/lib/index.js */
-      const styles = {
-        'bold': ['1', '22'],
-        'white': ['37', '39'],
-        'blue': ['34', '39'],
-        'cyan': ['36', '39'],
-        'magenta': ['35', '39'],
-        'red': ['31', '39'],
-        'yellow': ['33', '39']
-      };
-
-      const colorize = (style, text) => {
-        const textArr = text.split(/\r|\n/g);
-        let message = '';
-        for (let i = 0; i < textArr.length; i++) {
-          if (textArr[i] && textArr[i].length) {
-            message += textArr[i] + '\r\n';
-          }
-        }
-        return message;
-      };
-
       this.cons = {
         error(obj, message) {
           if (obj.level === 'FATAL') {
-            process.stdout.write(colorize('red', colorize('bold', message)) + '\r\n');
+            process.stdout.write(message + '\r\n');
           } else {
-            process.stdout.write(colorize('red', message) + '\r\n');
+            process.stdout.write(message + '\r\n');
           }
         },
         info(obj, message) {
-          process.stdout.write(colorize('cyan', message) + '\r\n');
+          process.stdout.write(message + '\r\n');
         },
         warn(obj, message) {
-          process.stdout.write(colorize('magenta', message) + '\r\n');
+          process.stdout.write(message + '\r\n');
         },
         debug(obj, message) {
-          process.stdout.write(colorize('white', colorize('bold', message)) + '\r\n');
+          process.stdout.write(message + '\r\n');
         },
         trace(obj, message) {
-          process.stdout.write(colorize('blue', message) + '\r\n');
+          process.stdout.write(message + '\r\n');
         },
         log(obj, message) {
-          process.stdout.write(colorize('bold', message) + '\r\n');
+          process.stdout.write(message + '\r\n');
         }
       };
     } else {
@@ -94,9 +72,9 @@ class LoggerConsole {
         },
         debug(obj, message) {
           if (_.isFunction(console.debug)) {
-            console.debug(message, 'color:white;font-weight:bold;background-color:#000', obj.data);
+            console.debug(message, 'color: white; font-weight: bold; background-color: #000', obj.data);
           } else {
-            console.log(message, 'color:white;font-weight:bold;background-color:#000', obj.data);
+            console.log(message, 'color:white; font-weight:bold; background-color:#000', obj.data);
           }
         },
         trace(obj, message) {
