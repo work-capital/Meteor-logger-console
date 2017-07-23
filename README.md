@@ -44,7 +44,7 @@ Usage
 #### Example: [*Isomorphic*]
 ```jsx
 import { Logger }        from 'meteor/ostrio:logger';
-import { LoggerConsole } from 'meteor/ostrio:loggerconsole';
+import { LoggerConsole } from 'meteor/ruchy:nocolorlogger';
 
 // Initialize Logger:
 const log = new Logger();
@@ -62,7 +62,7 @@ const log = new Logger();
 ### Activate with custom adapter settings: [*Isomorphic*]
 ```jsx
 import { Logger }        from 'meteor/ostrio:logger';
-import { LoggerConsole } from 'meteor/ostrio:loggerconsole';
+import { LoggerConsole } from 'meteor/ruchy:nocolorlogger';
 
 const log = new Logger();
 (new LoggerConsole(log)).enable({
@@ -76,7 +76,7 @@ const log = new Logger();
 ##### Log message: [*Isomorphic*]
 ```jsx
 import { Logger }        from 'meteor/ostrio:logger';
-import { LoggerConsole } from 'meteor/ostrio:loggerconsole';
+import { LoggerConsole } from 'meteor/ruchy:nocolorlogger';
 
 const log = new Logger();
 (new LoggerConsole(log)).enable();

@@ -1,6 +1,6 @@
 Package.describe({
   name: 'ruchy:nocolorlogger',
-  version: '1.0.0',
+  version: '1.0.1',
   summary: 'Logging: Print Client\'s logs to Server\'s console, client messages colorized for better readability',
   git: 'https://github.com/work-capital/Meteor-logger-console',
   documentation: 'README.md'
@@ -14,6 +14,6 @@ Package.onUse(function(api) {
 
 Package.onTest(function(api) {
   api.use('tinytest');
-  api.use(['ecmascript', 'underscore', 'ostrio:logger@2.0.2', 'ruchy:nocolorlogger@1.0.0']);
+  api.use(['ecmascript', 'underscore', 'ostrio:logger@2.0.2', 'ruchy:nocolorlogger@1.0.1']);
   api.addFiles('nocolorlogger-tests.js');
 });
