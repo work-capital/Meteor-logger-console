@@ -1,8 +1,8 @@
 Logging: To Console
 ========
-*Console* adapter for [logger driver](https://github.com/VeliovGroup/Meteor-logger). Print Client's log messages to Server's console package. All messages is enhanced with colors and extra styles for better readability.
+*Console* adapter for [logger driver](https://github.com/VeliovGroup/Meteor-logger). Print Client's log messages to Server's console package. All client messages is enhanced with colors and extra styles for better readability.
 
-This package is not limited to transferring *Client* log messages to Server. It can be used on *Client* or *Server* only, or for printing colorized messages.
+This package is not limited to transferring *Client* log messages to Server. It can be used on *Client* or *Server* only, or for printing colorized messages in *Client*.
 
 Features:
  - Flexible log level filters;
@@ -10,11 +10,8 @@ Features:
  - Pass logs from *Client* to *Server*;
  - Catch all browser's errors.
 
-### Server example:
-![server example](https://raw.githubusercontent.com/VeliovGroup/Meteor-logger-console/master/server.png)
-
 ### Client example:
-![client example](https://raw.githubusercontent.com/VeliovGroup/Meteor-logger-console/master/client.png)
+![client example](https://raw.githubusercontent.com/work-capital/Meteor-logger-console/master/client.png)
 
 Installation:
 ========
@@ -29,13 +26,6 @@ ES6 Import:
 import { Logger }        from 'meteor/ostrio:logger';
 import { LoggerConsole } from 'meteor/ostrio:loggerconsole';
 ```
-
-Support this awesome package:
-========
- - Star on [GitHub](https://github.com/VeliovGroup/Meteor-logger-console)
- - Star on [Atmosphere](https://atmospherejs.com/ostrio/loggerconsole)
- - [Tweet](https://twitter.com/share?url=https://github.com/VeliovGroup/Meteor-logger-console&text=Print%20colorful%20log%20messages%20and%20send%20Client's%20logs%20to%20Server's%20console%20%23meteorjs%20%23javascript%20via%20%40VeliovGroup)
- - Share on [Facebook](https://www.facebook.com/sharer.php?u=https://github.com/VeliovGroup/Meteor-logger-console)
 
 Usage
 ========
