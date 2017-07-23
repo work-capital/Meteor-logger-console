@@ -24,7 +24,7 @@ ES6 Import:
 ========
 ```jsx
 import { Logger }        from 'meteor/ostrio:logger';
-import { LoggerConsole } from 'meteor/ostrio:loggerconsole';
+import { LoggerConsole } from 'meteor/ruchy:nocolorlogger';
 ```
 
 Usage
