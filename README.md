@@ -17,7 +17,7 @@ Installation:
 ========
 ```shell
 meteor add ostrio:logger # If not yet installed
-meteor add ostrio:loggerconsole
+meteor add ruchy:nocolorlogger
 ```
 
 ES6 Import:
