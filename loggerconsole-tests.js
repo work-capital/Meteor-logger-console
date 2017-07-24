@@ -1,6 +1,6 @@
 import { _ }                     from 'meteor/underscore';
 import { Meteor }                from 'meteor/meteor';
-import { LoggerConsole }         from 'meteor/ruchy:nocolorlogger';
+import { LoggerConsole }         from 'meteor/workcapital1:loggerconsole';
 import { Logger, LoggerMessage } from 'meteor/ostrio:logger';
 
 const log1 = new Logger();
