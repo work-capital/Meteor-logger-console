@@ -17,14 +17,14 @@ Installation:
 ========
 ```shell
 meteor add ostrio:logger # If not yet installed
-meteor add ruchy:nocolorlogger
+meteor add workcapital1:loggerconsole
 ```
 
 ES6 Import:
 ========
 ```jsx
 import { Logger }        from 'meteor/ostrio:logger';
-import { LoggerConsole } from 'meteor/ruchy:nocolorlogger';
+import { LoggerConsole } from 'meteor/workcapital1:loggerconsole';
 ```
 
 Usage
@@ -44,7 +44,7 @@ Usage
 #### Example: [*Isomorphic*]
 ```jsx
 import { Logger }        from 'meteor/ostrio:logger';
-import { LoggerConsole } from 'meteor/ruchy:nocolorlogger';
+import { LoggerConsole } from 'meteor/workcapital1:loggerconsole';
 
 // Initialize Logger:
 const log = new Logger();
@@ -62,7 +62,7 @@ const log = new Logger();
 ### Activate with custom adapter settings: [*Isomorphic*]
 ```jsx
 import { Logger }        from 'meteor/ostrio:logger';
-import { LoggerConsole } from 'meteor/ruchy:nocolorlogger';
+import { LoggerConsole } from 'meteor/workcapital1:loggerconsole';
 
 const log = new Logger();
 (new LoggerConsole(log)).enable({
@@ -76,7 +76,7 @@ const log = new Logger();
 ##### Log message: [*Isomorphic*]
 ```jsx
 import { Logger }        from 'meteor/ostrio:logger';
-import { LoggerConsole } from 'meteor/ruchy:nocolorlogger';
+import { LoggerConsole } from 'meteor/workcapital1:loggerconsole';
 
 const log = new Logger();
 (new LoggerConsole(log)).enable();
