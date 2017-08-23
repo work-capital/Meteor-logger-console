@@ -133,7 +133,7 @@ class LoggerConsole {
         }
       }
       else {
-        process.stdout.write(_message + '\r\n\n');
+        process.stdout.write(_message + '\r\n');
       }
     }, false, false);
   }
